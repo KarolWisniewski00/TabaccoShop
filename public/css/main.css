@@ -1,0 +1,108 @@
+/* IMAGES */
+.bg-img-1 {
+    background-image: url("../photos/footer.jpg");
+    background-color: #cccccc;
+    height: 30em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img-2 {
+    background-image: url("../photos/bong.jpg");
+    background-color: #cccccc;
+    height: 30em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img-3 {
+    background-image: url("../photos/roll.jpg");
+    background-color: #cccccc;
+    height: 30em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img-4 {
+    background-image: url("../photos/vapo.jpg");
+    background-color: #cccccc;
+    height: 30em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* BACKGROUND*/
+.bg-custom {
+    background-color: #618E09;
+}
+
+/* BORDER */
+.border-top-custom {
+    border-top: 0.5em solid #F2D857;
+}
+
+.border-bot-custom {
+    border-bottom: 0.5em solid #F2D857;
+}
+
+/* TEXT */
+.text-custom {
+    color: #F0EFE6;
+}
+
+.text-custom:hover {
+    color: #F2D857;
+    cursor: default;
+}
+
+.text-custom-1 {
+    color: #F0EFE6cc;
+    line-height: 0.85;
+}
+
+.text-custom-1:hover {
+    color: #F0EFE6;
+}
+
+/* BUTTON */
+.btn-custom {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #618E09;
+    --bs-btn-border-color: #618E09;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #6b9b0b;
+    --bs-btn-hover-border-color: #6b9b0b;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #6b9b0b;
+    --bs-btn-active-border-color: #6b9b0b;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #618E09;
+    --bs-btn-disabled-border-color: #618E09
+}
+
+.btn-custom-1 {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #F2D857;
+    --bs-btn-border-color: #F2D857;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ddc653;
+    --bs-btn-hover-border-color: #ddc653;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ddc653;
+    --bs-btn-active-border-color: #ddc653;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #F2D857;
+    --bs-btn-disabled-border-color: #F2D857
+}
+/* OTHER */
+.ms-n5 {
+    margin-left: -40px;
+}
