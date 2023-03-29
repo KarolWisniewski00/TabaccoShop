@@ -1,5 +1,5 @@
 /* IMAGES */
-.bg-img-1 {
+.bg-img-footer {
     background-image: url("../photos/footer.jpg");
     background-color: #cccccc;
     height: 30em;
@@ -8,36 +8,24 @@
     background-size: cover;
 }
 
-.bg-img-2 {
-    background-image: url("../photos/bong.jpg");
+.bg-img {
     background-color: #cccccc;
     height: 30em;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: 200ms linear;
+    transform: scale(1) translateZ(0);
+    filter: brightness(0.75) saturate(1.4);
 }
 
-.bg-img-3 {
-    background-image: url("../photos/roll.jpg");
-    background-color: #cccccc;
-    height: 30em;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.bg-img-4 {
-    background-image: url("../photos/vapo.jpg");
-    background-color: #cccccc;
-    height: 30em;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 /* BACKGROUND*/
 .bg-custom {
     background-color: #618E09;
+}
+.bg-custom-1 {
+    background-color: #F2574B;
 }
 
 /* BORDER */
@@ -66,6 +54,10 @@
 
 .text-custom-1:hover {
     color: #F0EFE6;
+}
+
+.text-custom-2 {
+    color: #618E09;
 }
 
 /* BUTTON */
@@ -102,7 +94,41 @@
     --bs-btn-disabled-bg: #F2D857;
     --bs-btn-disabled-border-color: #F2D857
 }
+.btn-custom-2 {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #375807;
+    --bs-btn-border-color: #375807;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #618E09;
+    --bs-btn-hover-border-color: #618E09;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #618E09;
+    --bs-btn-active-border-color: #618E09;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #375807;
+    --bs-btn-disabled-border-color: #375807
+}
+
 /* OTHER */
 .ms-n5 {
     margin-left: -40px;
+}
+.cat-cat{
+    color:rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.cat-head{
+    color:rgba(255,255,255,0.9);
+    font-size: 2,4rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+    line-height: 1.4;
+    word-spacing: 100vw;
+    font-weight: 700;
+}
+.cat-card:hover .bg-img{
+    transform: scale(1.05) translateZ(0);
 }

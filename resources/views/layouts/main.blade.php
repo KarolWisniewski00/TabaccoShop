@@ -23,7 +23,7 @@
         </div>
         <header class="py-2 border-bottom">
             <div class="container d-flex flex-wrap justify-content-center">
-                <a href="/saco/public" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+                <a href="{{route('index')}}" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
                     <span class="fs-4">LOGO</span>
                 </a>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
@@ -43,10 +43,10 @@
         <nav class="py-2 mb-2">
             <div class="container d-flex flex-wrap">
                 <ul class="nav mx-auto">
-                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Start</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Bonga</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Bletki</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Waporyzatory</a></li>
+                    <li class="nav-item"><a href="{{route('index')}}" class="nav-link link-dark px-2">Start</a></li>
+                    @foreach($categories as $category)
+                    <li class="nav-item"><a href="{{ url('category/'.$category->url)}}" class="nav-link link-dark px-2">{{$category->plural}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </nav>
@@ -76,10 +76,9 @@
                     <div class="col">
                         <h5 class="fw-bold fs-4 text-uppercase text-custom">Nowości</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Bonga</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Bletki</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Waporyzatory</a>
-                            </li>
+                            @foreach($categories as $category)
+                            <li class="nav-item mb-2"><a href="{{ url('category/'.$category->url)}}" class="nav-link p-0 text-custom-1">{{$category->plural}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
 
@@ -87,8 +86,7 @@
                         <h5 class="fw-bold fs-4 text-uppercase text-custom">Zakupy</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Koszyk</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Twoje
-                                    zamówienia</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Twoje zamówienia</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Formy płatności</a>
                             </li>
                         </ul>
@@ -97,19 +95,17 @@
                     <div class="col">
                         <h5 class="fw-bold fs-4 text-uppercase text-custom">Informacje</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">O nas</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Zwroty i
-                                    reklamacje</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Regulamin</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Polityka
-                                    prywatności</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Kontakt</a></li>
+                            <li class="nav-item mb-2"><a href="{{ url('about') }}" class="nav-link p-0 text-custom-1">O nas</a></li>
+                            <li class="nav-item mb-2"><a href="{{ url('return') }}" class="nav-link p-0 text-custom-1">Zwroty i reklamacje</a></li>
+                            <li class="nav-item mb-2"><a href="{{ url('rules') }}" class="nav-link p-0 text-custom-1">Regulamin</a></li>
+                            <li class="nav-item mb-2"><a href="{{ url('policy') }}" class="nav-link p-0 text-custom-1">Polityka prywatności</a></li>
+                            <li class="nav-item mb-2"><a href="{{ url('contact') }}" class="nav-link p-0 text-custom-1">Kontakt</a></li>
                         </ul>
                     </div>
                 </footer>
             </div>
         </div>
-        <div class="bg-img-1">
+        <div class="bg-img-footer">
             <div class="d-flex justify-content-center align-items-center h-100 border-bot-custom">
                 <div class="border border-4 border-white px-4 py-2 fw-bold fs-1" style="background-color: rgba(0, 0, 0, 0.5);">420</div>
             </div>

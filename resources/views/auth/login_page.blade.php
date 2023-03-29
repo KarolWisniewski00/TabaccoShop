@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('nav')
 <ul class="nav">
-    <li><a href="register" class="mx-2 btn btn-custom-1 text-black rounded-0">Rejestracja</a></li>
+    <li><a href="{{ url('register')}}" class="mx-2 btn btn-custom-1 text-black rounded-0">Rejestracja</a></li>
 </ul>
 @endsection
 @section('content')
@@ -27,7 +27,7 @@
                 </div>
 
                 <div><a href="">Zapomaniałeś hasła?</a></div>
-                <div><a href="register">Nie masz konta? Rejestracja</a></div>
+                <div><a href="{{ url('register')}}">Nie masz konta? Rejestracja</a></div>
 
                 <button class="w-100 btn btn-lg btn-custom my-3 rounded-0" type="submit">Zaloguj</button>
             </form>
