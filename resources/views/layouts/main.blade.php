@@ -74,7 +74,7 @@
             <div class="container">
                 <footer class="row row-cols-1 row-cols-md-3 py-3 text-center">
                     <div class="col">
-                        <h5 class="fw-bold fs-4 text-uppercase text-custom">Nowości</h5>
+                        <h5 class="fw-bold fs-4 text-uppercase text-custom">Kategorie</h5>
                         <ul class="nav flex-column">
                             @foreach($categories as $category)
                             <li class="nav-item mb-2"><a href="{{ url('category/'.$category->url)}}" class="nav-link p-0 text-custom-1">{{$category->plural}}</a></li>

@@ -27,7 +27,7 @@
                 <div class="container">
                     <div class="carousel-caption" style="text-shadow: 2px 2px 20px rgba(0,0,0,0.2);">
                         <h1>Wielkie otwarcie Taco Tabacco!</h1>
-                        <p>Najwyższej jakości prtykuły związane z paleniem</p>
+                        <p>Najwyższej jakości produkty związane z paleniem</p>
                         <p><a class="btn btn-lg btn-custom rounded-0" href="#">Załóż konto i zamów!</a></p>
                     </div>
                 </div>
@@ -59,9 +59,9 @@
 <section>
     <div class="container">
         <h2 class="text-center my-4" style="font-size: 3em;">Kategorie</h2>
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
             @foreach($categories as $category)
-            <div class="col-4">
+            <div class="col-xx col-sm-12 col-md-4">
                 <a href="{{ url('category/'.$category->url)}}" class="position-relative cat-card">
                     <div class="bg-img" style="background-image: url({{ asset('photos/'.$category->photo) }} );"></div>
                     <div class="position-absolute top-0 start-50 translate-middle-x text-center mt-3 p-2">
@@ -71,6 +71,9 @@
                 </a>
             </div>
             @endforeach
+            @if(count($categories) % 2 == 2)
+            <div class="col-xx col-sm-12 col-md-4"></div>
+            @endif
         </div>
     </div>
 </section>
@@ -78,7 +81,7 @@
 <!--PRODUCTS GRID-->
 <section>
     <div class="container">
-        <h2 class="text-center my-4" style="font-size: 3em;">Nowości</h2>
+        <h2 class="text-center my-4" style="font-size: 3em;">Produkty</h2>
         <div class="row g-4 pb-4">
             <div class="col-3">
                 <div class="border text-center p-4 shadow position-relative">
