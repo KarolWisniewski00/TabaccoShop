@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function pages($name){
+    public function pages($url){
         return view('pages', [
-            'name'=>$name
+            'url'=>$url
         ]);
     }
 }

@@ -31,7 +31,7 @@ Route::post('/register',[AuthController::class,'register_form'])->name('register
 Route::get('/logout', [AuthController::class, 'logout']);
 
 //PAGES
-Route::get('/category/{name}',[PagesController::class, 'pages']);
+Route::get('/category/{url}',[PagesController::class, 'pages']);
 Route::get('/about',[AboutController::class, 'about']);
 Route::get('/rules',[RulesController::class, 'rules']);
 Route::get('/policy',[PolicyController::class, 'policy']);
