@@ -14,7 +14,7 @@
     <!--INFO +NAV + HEADER-->
     <section class="bg-light">
         <div class="container-fluid bg-custom border-bot-custom mb-4 text-white">
-            <div class="d-flex justify-content-end py-2">
+            <div class="d-flex flex-column flex-md-row justify-content-end py-2">
                 <div class="me-3"><i class="fa-solid fa-joint"></i> Taco Tabacco</div>
                 <div class="me-3"><i class="fa-solid fa-phone"></i> +48 791 123 387</div>
                 <div class="me-3"><i class="fa-solid fa-envelope"></i> maciek.sacco@interia.pl</div>

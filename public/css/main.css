@@ -8,6 +8,31 @@
     background-size: cover;
 }
 
+.bg-img-hero-1{
+    background-image: url("../photos/hero.jpg");
+    background-color: #cccccc;
+    height: 50em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-img-hero-2{
+    background-image: url("../photos/hero1.jpg");
+    background-color: #cccccc;
+    height: 50em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (max-width: 768px) {
+    .bg-img-hero-1{
+        height: 30em;
+    }
+    .bg-img-hero-2{
+        height: 30em;
+    }
+}
+
 .bg-img {
     background-color: #cccccc;
     height: 30em;
