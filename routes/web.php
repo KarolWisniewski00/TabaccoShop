@@ -8,6 +8,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\RulesController;
 use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReturnController;
 
 /*
@@ -32,6 +33,7 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 //PAGES
 Route::get('/category/{url}',[PagesController::class, 'pages']);
+Route::get('/product/{id}',[ProductController::class, 'product']);
 Route::get('/about',[AboutController::class, 'about']);
 Route::get('/rules',[RulesController::class, 'rules']);
 Route::get('/policy',[PolicyController::class, 'policy']);

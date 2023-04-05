@@ -16,9 +16,9 @@
         <div class="container-fluid bg-custom border-bot-custom mb-4 text-white">
             <div class="d-flex justify-content-end py-2">
                 <div class="me-3"><i class="fa-solid fa-joint"></i> Taco Tabacco</div>
-                <div class="me-3"><i class="fa-solid fa-phone"></i> +48 123 456 789</div>
-                <div class="me-3"><i class="fa-solid fa-envelope"></i> przykład@przykład.pl</div>
-                <div class="me-3"><i class="fa-solid fa-house"></i> Wrocławska 1, 12-123 Bytom</div>
+                <div class="me-3"><i class="fa-solid fa-phone"></i> +48 791 123 387</div>
+                <div class="me-3"><i class="fa-solid fa-envelope"></i> maciek.sacco@interia.pl</div>
+                <div class="me-3"><i class="fa-solid fa-house"></i> Zabrzańska b/n Przystanek Ratusz</div>
             </div>
         </div>
         <header class="py-2 border-bottom">
