@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+    //INDEX LOGIN
     public function login_page()
     {
         return view('auth.login_page');
     }
+    //FORM LOGIN
     public function login_form(Request $request)
     {
         $request->validate([
@@ -36,10 +38,12 @@ class AuthController extends Controller
             return redirect('/login')->with('fail', 'Nie ma takiego użytkownika!');
         }
     }
+    //INDEX REGISTER
     public function register_page()
     {
         return view('auth.register_page');
     }
+    //FORM REGISTER
     public function register_form(Request $request)
     {
         $request->validate([
@@ -64,6 +68,7 @@ class AuthController extends Controller
             return redirect('/')->with('fail', 'Error!');
         }
     }
+    //LOGOUT
     public function logout()
     {
         if (Session::has('login_id')) {

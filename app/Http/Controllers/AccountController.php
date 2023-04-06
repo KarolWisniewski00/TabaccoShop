@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
+    //INDEX ACCOUNT
     public function account()
     {
         $user = User::where('id', '=', Session::get('login_id'))->get();
@@ -17,9 +18,12 @@ class AccountController extends Controller
             'edit' => 0
         ]);
     }
-    public function history(){
+    //INDEX HISTORY
+    public function history()
+    {
         return view('account.history');
     }
+    //INDEX EDIT
     public function edit()
     {
         $user = User::where('id', '=', Session::get('login_id'))->get();
@@ -28,6 +32,7 @@ class AccountController extends Controller
             'edit' => 1
         ]);
     }
+    //FORM EDIT
     public function edit_form(Request $request)
     {
         $request->validate([

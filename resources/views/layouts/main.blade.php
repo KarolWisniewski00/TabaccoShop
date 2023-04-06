@@ -21,6 +21,7 @@
                 <div class="me-3"><i class="fa-solid fa-house"></i> Zabrzańska b/n Przystanek Ratusz</div>
             </div>
         </div>
+        <!---->
         <header class="py-2 border-bottom">
             <div class="container d-flex flex-wrap justify-content-center">
                 <a href="{{route('index')}}" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">

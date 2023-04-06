@@ -7,10 +7,12 @@ use App\Models\Product;
 
 class IndexController extends Controller
 {
-    public function index(){
+    //INDEX INDEX
+    public function index()
+    {
         $products = Product::inRandomOrder()->take(8)->get();
-        return view('index',[
-            'products'=>$products
+        return view('index', [
+            'products' => $products
         ]);
     }
 }

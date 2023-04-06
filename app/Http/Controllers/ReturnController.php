@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class ReturnController extends Controller
 {
-    public function return(){
+    //INDEX RETURN
+    public function return()
+    {
         return view('static.return');
     }
 }

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function about(){
+    //INDEX ABOUT
+    public function about()
+    {
         return view('static.about');
     }
 }

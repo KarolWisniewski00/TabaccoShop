@@ -5,6 +5,7 @@
 </ul>
 @endsection
 @section('content')
+<!--REGISTER-->
 <section>
     <div class="container">
         <div class="row">
@@ -51,6 +52,6 @@
             </div>
         </div>
     </div>
-    </div>
 </section>
+<!--END REGISTER-->
 @endsection
