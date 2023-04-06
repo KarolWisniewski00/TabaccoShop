@@ -1,17 +1,6 @@
 @extends('layouts.main')
 @section('nav')
-@if (session()->has('login_id'))
-<ul class="nav">
-    <li><a href="{{ url('account')}}" class="mx-2 btn btn-custom-2 rounded-0"><i class="fa-solid fa-user"></i></a></li>
-    <li><a href="{{ url('busket')}}" class="mx-2 btn btn-custom rounded-0"><i class="fa-solid fa-cart-shopping"></i></a></li>
-    <li><a href="{{ url('logout')}}" class="mx-2 btn btn-custom-1 text-black rounded-0"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-</ul>
-@else
-<ul class="nav">
-    <li><a href="{{ url('login')}}" class="mx-2 btn btn-custom rounded-0">Logowanie</a></li>
-    <li><a href="{{ url('register')}}" class="mx-2 btn btn-custom-1 text-black rounded-0">Rejestracja</a></li>
-</ul>
-@endif
+@include('layouts.nav')
 @endsection
 @section('content')
 <div class="container">
@@ -20,19 +9,7 @@
             <div class="d-flex flex-column justify-content-center align-items-center text-center my-5">
                 <h1>Konto</h1>
             </div>
-            <nav class="py-2 mb-2">
-                <div class="container d-flex flex-wrap">
-                    <ul class="nav mx-auto">
-                        <li class="nav-item"><a href="{{ url('account')}}" class="nav-link link-dark px-2">Informacje</a></li>
-                        <li class="nav-item"><a href="{{ url('history')}}" class="nav-link link-dark px-2">Twoje zamówienia</a></li>
-                        <li class="nav-item"><a href="{{ url('busket')}}" class="nav-link link-dark px-2">Koszyk</a></li>
-                        @if (session()->has('admin'))
-                        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Panel admina</a></li>
-                        @endif
-                        <li class="nav-item"><a href="{{ url('logout')}}" class="nav-link link-dark px-2">Wyloguj się</a></li>
-                    </ul>
-                </div>
-            </nav>
+            @include('layouts.accnav')
             <div class="col-12">
                 @if ($edit == 0)
                 <ul class="list-group rounded-0 shadow">

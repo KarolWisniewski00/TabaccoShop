@@ -12,18 +12,18 @@ class AccountController extends Controller
     public function account()
     {
         $user = User::where('id', '=', Session::get('login_id'))->get();
-        return view('account', [
+        return view('account.account', [
             'user' => $user[0],
             'edit' => 0
         ]);
     }
     public function history(){
-        return view('history');
+        return view('account.history');
     }
     public function edit()
     {
         $user = User::where('id', '=', Session::get('login_id'))->get();
-        return view('account', [
+        return view('account.account', [
             'user' => $user[0],
             'edit' => 1
         ]);

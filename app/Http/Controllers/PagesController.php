@@ -10,7 +10,7 @@ class PagesController extends Controller
     public function pages($url){
         $category = Category::where('url' ,'=', $url)->get();
         $products = Product::where('category_id' ,'=', $category[0]->id)->get();
-        return view('pages', [
+        return view('dynamic.pages', [
             'url'=>$url,
             'products'=>$products
         ]);

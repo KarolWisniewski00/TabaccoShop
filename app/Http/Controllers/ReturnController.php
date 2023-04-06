@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ReturnController extends Controller
 {
     public function return(){
-        return view('return');
+        return view('static.return');
     }
 }

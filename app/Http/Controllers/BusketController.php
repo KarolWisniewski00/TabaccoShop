@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class BusketController extends Controller
 {
     public function busket(){
-        return view('busket');
+        return view('account.busket');
     }
 }
