@@ -3,9 +3,9 @@
 @include('layouts.nav')
 @endsection
 @section('content')
-<div class="container">
-    <!--PRODUCT-->
-    <section>
+<!--PRODUCT-->
+<section>
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="text-center my-4">
@@ -13,25 +13,23 @@
                 </div>
             </div>
             <!--LINKS-->
-            <section>
-                <div class="col-12 text-wrap">
-                    <div class="d-flex flex-row justify-content-start align-items-center mb-4 flex-wrap">
-                        <a href="{{route('index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
-                        <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
-                        <div class="mx-1">Kategorie</div>
-                        <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
-                        @foreach($categories as $category)
-                        @if ($category_id == $category->id)
-                        <a href="{{ url('category/'.$category->url)}}" class="text-custom-2 mx-1 text-decoration-none">{{$category->plural}}</a>
-                        @endif
-                        @endforeach
-                        <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
-                        <div class="mx-1">Produkt</div>
-                        <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
-                        <div class="mx-1">{{$product->name}}</div>
-                    </div>
+            <div class="col-12 text-wrap">
+                <div class="d-flex flex-row justify-content-start align-items-center mb-4 flex-wrap">
+                    <a href="{{route('index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
+                    <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
+                    <div class="mx-1">Kategorie</div>
+                    <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
+                    @foreach($categories as $category)
+                    @if ($category_id == $category->id)
+                    <a href="{{ url('category/'.$category->url)}}" class="text-custom-2 mx-1 text-decoration-none">{{$category->plural}}</a>
+                    @endif
+                    @endforeach
+                    <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
+                    <div class="mx-1">Produkt</div>
+                    <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
+                    <div class="mx-1">{{$product->name}}</div>
                 </div>
-            </section>
+            </div>
             <!--END LINKS-->
             <div class="col-12 col-md-6 position-relative">
                 <img alt="bong" src="{{ asset('photos/'.$product->photo)}}" class="img-fluid">
@@ -61,10 +59,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!--END PRODUCT-->
-    <!--PRODUCTS GRID-->
-    <section>
+        <!--END PRODUCT-->
+        <!--PRODUCTS GRID-->
         <div class="row">
             <div class="col-12">
                 <div class="text-center my-4">
@@ -101,7 +97,8 @@
             </div>
             @endforeach
         </div>
-    </section>
-    <!--END PRODUCTS GRID-->
-</div>
+        <!--END PRODUCTS GRID-->
+    </div>
+</section>
+<!--END PRODUCT-->
 @endsection
