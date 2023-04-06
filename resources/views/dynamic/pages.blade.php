@@ -129,9 +129,9 @@
                 <div class="row products">
                     @foreach ($products as $product)
                     @if ($product->sale_price != 0)
-                    <div class="col-12 col-md-6 col-lg-4 mb-4" data-price="{{$product->sale_price}}" data-id="{{$product->id}}">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 single" data-price="{{$product->sale_price}}" data-id="{{$product->id}}">
                         @else
-                        <div class="col-12 col-md-6 col-lg-4 mb-4" data-price="{{$product->normal_price}}" data-id="{{$product->id}}">
+                        <div class="col-12 col-md-6 col-lg-4 mb-4 single" data-price="{{$product->normal_price}}" data-id="{{$product->id}}">
                             @endif
                             <div class="border text-center p-4 shadow position-relative h-100 d-flex flex-column justify-content-between align-items-center">
                                 <img alt="bong" src="{{ asset('photos/'.$product->photo)}}" class="img-fluid">
@@ -162,8 +162,8 @@
                         @endforeach
                     </div>
                 </div>
+                <!--END PRODUCTS GRID-->
             </div>
-            <!--END PRODUCTS GRID-->
         </div>
     </div>
 </section>
@@ -174,15 +174,15 @@
         $(".dropdown-menu button").click(function() {
             var sortValue = $(this).text();
             if (sortValue == "Domyślne sortowanie") {
-                $(".col-3").sort(function(a, b) {
+                $(".single").sort(function(a, b) {
                     return $(a).data('id') - $(b).data('id');
                 }).appendTo(".products");
             } else if (sortValue == "Sortuj po cenie od najniższej") {
-                $(".col-3").sort(function(a, b) {
+                $(".single").sort(function(a, b) {
                     return $(a).data("price") - $(b).data("price");
                 }).appendTo(".products");
             } else if (sortValue == "Sortuj po cenie od najwyższej") {
-                $(".col-3").sort(function(a, b) {
+                $(".single").sort(function(a, b) {
                     return $(b).data("price") - $(a).data("price");
                 }).appendTo(".products");
             }
