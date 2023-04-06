@@ -85,8 +85,8 @@
                     <div class="col">
                         <h5 class="fw-bold fs-4 text-uppercase text-custom">Zakupy</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Koszyk</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Twoje zamówienia</a></li>
+                            <li class="nav-item mb-2"><a href="{{ url('busket')}}" class="nav-link p-0 text-custom-1">Koszyk</a></li>
+                            <li class="nav-item mb-2"><a href="{{ url('history')}}" class="nav-link p-0 text-custom-1">Twoje zamówienia</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Formy płatności</a>
                             </li>
                         </ul>
