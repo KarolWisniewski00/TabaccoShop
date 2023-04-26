@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layout.client')
 @section('nav')
-@include('layouts.nav')
+@include('module.nav')
 @endsection
 @section('content')
 <!--RETURN-->

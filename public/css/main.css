@@ -8,7 +8,7 @@
     background-size: cover;
 }
 
-.bg-img-hero-1{
+.bg-img-hero-1 {
     background-image: url("../photos/hero.jpg");
     background-color: #cccccc;
     height: 50em;
@@ -16,7 +16,8 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.bg-img-hero-2{
+
+.bg-img-hero-2 {
     background-image: url("../photos/hero1.jpg");
     background-color: #cccccc;
     height: 50em;
@@ -24,11 +25,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 @media screen and (max-width: 768px) {
-    .bg-img-hero-1{
+    .bg-img-hero-1 {
         height: 30em;
     }
-    .bg-img-hero-2{
+
+    .bg-img-hero-2 {
         height: 30em;
     }
 }
@@ -49,6 +52,7 @@
 .bg-custom {
     background-color: #618E09;
 }
+
 .bg-custom-1 {
     background-color: #F2574B;
 }
@@ -82,7 +86,11 @@
 }
 
 .text-custom-2 {
-    color: #618E09!important;
+    color: #618E09 !important;
+}
+
+.list-group-item:hover {
+    color: #618E09 !important;
 }
 
 /* BUTTON */
@@ -119,6 +127,7 @@
     --bs-btn-disabled-bg: #F2D857;
     --bs-btn-disabled-border-color: #F2D857
 }
+
 .btn-custom-2 {
     --bs-btn-color: #fff;
     --bs-btn-bg: #375807;
@@ -140,20 +149,56 @@
 .ms-n5 {
     margin-left: -40px;
 }
-.cat-cat{
-    color:rgba(255,255,255,0.6);
+
+.cat-cat {
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
     margin-bottom: 8px;
     text-transform: uppercase;
 }
-.cat-head{
-    color:rgba(255,255,255,0.9);
-    font-size: 2,4rem;
-    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+
+.cat-head {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 2, 4rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
     line-height: 1.4;
     word-spacing: 100vw;
     font-weight: 700;
 }
-.cat-card:hover .bg-img{
+
+.cat-card:hover .bg-img {
     transform: scale(1.05) translateZ(0);
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 1em;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 1em;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.4em;
+    height: 1.4em;
+    background: #618E09;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+    width: 1.4em;
+    height: 1.4em;
+    background: #618E09;
+    cursor: pointer;
 }

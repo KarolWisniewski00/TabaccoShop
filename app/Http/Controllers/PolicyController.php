@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 class PolicyController extends Controller
 {
-    //INDEX POLICY
-    public function policy()
+    public function index()
     {
-        return view('static.policy');
+        return view('client.policy.index');
     }
 }

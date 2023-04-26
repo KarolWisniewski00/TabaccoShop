@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layout.client')
 @section('nav')
 <ul class="nav">
     <li><a href="{{ url('register')}}" class="mx-2 btn btn-custom-1 text-black rounded-0">Rejestracja</a></li>
@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form class="form text-center my-5" action="{{route('login_form')}}" method="POST">
+                <form class="form text-center my-5" action="{{route('client.store')}}" method="POST">
                     <!--TOKEN-->
                     @csrf
                     <h1 class="h3 mb-3 fw-normal">Logowanie</h1>

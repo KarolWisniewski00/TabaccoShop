@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 class BusketController extends Controller
 {
-    //INDEX BUSKET
-    public function busket()
+    public function index()
     {
-        return view('account.busket');
+        return view('client.account.busket.index');
     }
 }

@@ -1,20 +1,23 @@
-@extends('layouts.main')
+@extends('layout.client')
 @section('nav')
-@include('layouts.nav')
-@endsection
+@include('module.nav')
 @endsection
 @section('content')
-<!--CONTACT-->
+<!--BUSKET-->
 <section>
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="d-flex flex-column justify-content-center align-items-center text-center my-5">
-                    <h1 class="display-1">Kontakt</h1>
+                    <h1>Koszyk</h1>
+                </div>
+                @include('module.accnav')
+                <div class="col-12">
+                    <div class="text-center fw-bold mt-4 pt-4" style="font-size: 1.4em;">Twój koszyk jest pusty!</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--END CONTACT-->
+<!--END BUSKET-->
 @endsection

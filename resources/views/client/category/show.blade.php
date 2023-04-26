@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layout.client')
 @section('nav')
-@include('layouts.nav')
+@include('module.nav')
 @endsection
 @section('content')
 <!--PAGES-->
@@ -20,7 +20,7 @@
             <section>
                 <div class="col-12">
                     <div class="d-flex justify-content-start align-items-center mb-4">
-                        <a href="{{route('index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
+                        <a href="{{route('client.index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
                         <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
                         <div class="mx-1">Kategorie</div>
                         <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
@@ -49,11 +49,11 @@
                                 <div data-role="rangeslider" class="d-flex flex-column justify-content-center align-items-center">
                                     <div>
                                         <label for="price-min">Od:</label>
-                                        <input type="range" name="price-min" id="price-min" value="0" min="0" max="1000">
+                                        <input type="range" name="price-min" id="price-min" class="slider my-2" value="0" min="0" max="{{$max}}">
                                     </div>
                                     <div>
                                         <label for="price-max">Do:</label>
-                                        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+                                        <input type="range" name="price-max" id="price-max" class="slider my-2" value="{{$max}}" min="0" max="{{$max}}">
                                     </div>
                                 </div>
                                 <div>
@@ -71,13 +71,13 @@
                         </h2>
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
                             <div class="accordion-body">
-                                @foreach($categories as $category)
+                                @foreach($categories_count as $category)
                                 @if ($url != $category->url)
                                 <a href="{{ url('category/'.$category->url)}}" class="list-group-item d-flex justify-content-between align-items-start py-1">
                                     <div class="ms-2 me-auto">
                                         <div class="fw-bold">{{$category->plural}}</div>
                                     </div>
-                                    <span class="badge bg-primary rounded-pill">14</span>
+                                    <span class="badge bg-custom rounded-pill">{{$category->count}}</span>
                                 </a>
                                 @endif
                                 @endforeach
@@ -94,6 +94,11 @@
                             <div class="accordion-body">
                                 <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                             </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item py-4">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <button class="btn btn-lg btn-custom rounded-0">Filtruj</button>
                         </div>
                     </div>
                 </div>
@@ -170,6 +175,7 @@
 <!--END PAGES-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    //SORT
     $(document).ready(function() {
         $(".dropdown-menu button").click(function() {
             var sortValue = $(this).text();
@@ -189,7 +195,7 @@
         });
     });
 
-
+    //FILTER
     const priceMin = document.getElementById('price-min');
     const priceMax = document.getElementById('price-max');
     const priceMinValue = document.getElementById('price-min-value');

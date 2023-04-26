@@ -3,15 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\BusketController;
-use App\Http\Controllers\RulesController;
+use App\Http\Controllers\RuleController;
 use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReturnController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,29 +25,59 @@ use App\Http\Controllers\ReturnController;
 |
 */
 
-Route::get('/',[IndexController::class,'index'])->name('index');
+Route::get('/', [IndexController::class, 'index'])->name('client.index');
 
-//AUTH
-Route::get('/login',[AuthController::class,'login_page']);
-Route::get('/register',[AuthController::class,'register_page']);
-Route::post('/login',[AuthController::class,'login_form'])->name('login_form');
-Route::post('/register',[AuthController::class,'register_form'])->name('register_form');
-Route::get('/logout', [AuthController::class, 'logout']);
+Route::middleware(['AlreadyLoggedIn'])->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('client.login');
+    Route::get('/register', [AuthController::class, 'register'])->name('client.register');
+    Route::post('/login', [AuthController::class, 'store'])->name('client.store');
+    Route::post('/register', [AuthController::class, 'create'])->name('client.create');
+});
 
-//PAGES DYNAMIC
-Route::get('/category/{url}',[PagesController::class, 'pages']);
-Route::get('/product/{id}',[ProductController::class, 'product']);
+Route::middleware(['isLoggedIn'])->group(function () {
+    Route::get('/logout', [AuthController::class, 'logout'])->name('client.logout');
 
-//PAGES ACCOUNT
-Route::get('/account',[AccountController::class, 'account']);
-Route::get('/edit',[AccountController::class, 'edit']);
-Route::post('/edit',[AccountController::class, 'edit_form'])->name('edit_form');
-Route::get('/busket',[BusketController::class, 'busket']);
-Route::get('/history',[AccountController::class, 'history']);
+    Route::prefix('account')->group(function () {
+        Route::prefix('info')->group(function () {
+            Route::get('/', [AccountController::class, 'index'])->name('client.account.info.index');
+            Route::get('/edit', [AccountController::class, 'edit'])->name('client.account.info.edit');
+            Route::post('/edit', [AccountController::class, 'store'])->name('client.account.info.store');
+        });
 
-//PAGES STATIC
-Route::get('/rules',[RulesController::class, 'rules']);
-Route::get('/policy',[PolicyController::class, 'policy']);
-Route::get('/contact',[ContactController::class, 'contact']);
-Route::get('/return',[ReturnController::class, 'return']);
-Route::get('/about',[AboutController::class, 'about']);
+        Route::prefix('busket')->group(function () {
+            Route::get('/', [BusketController::class, 'index'])->name('client.account.busket.index');
+        });
+
+        Route::prefix('order')->group(function () {
+            Route::get('/', [OrderController::class, 'index'])->name('client.account.order.index');
+        });
+    });
+});
+
+Route::prefix('rule')->group(function () {
+    Route::get('/', [RuleController::class, 'index'])->name('client.rule.index');
+});
+
+Route::prefix('policy')->group(function () {
+    Route::get('/', [PolicyController::class, 'index'])->name('client.policy.index');
+});
+
+Route::prefix('contact')->group(function () {
+    Route::get('/', [ContactController::class, 'index'])->name('client.contact.index');
+});
+
+Route::prefix('return')->group(function () {
+    Route::get('/', [ReturnController::class, 'index'])->name('client.return.index');
+});
+
+Route::prefix('about')->group(function () {
+    Route::get('/', [AboutController::class, 'index'])->name('client.about.index');
+});
+
+Route::prefix('category')->group(function () {
+    Route::get('/{url}', [CategoryController::class, 'show'])->name('client.category.show');
+});
+
+Route::prefix('product')->group(function () {
+    Route::get('/{id}', [ProductController::class, 'show'])->name('client.product.show');
+});

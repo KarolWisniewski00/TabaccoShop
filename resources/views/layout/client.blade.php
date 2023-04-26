@@ -24,7 +24,7 @@
         <!---->
         <header class="py-2 border-bottom">
             <div class="container d-flex flex-wrap justify-content-center">
-                <a href="{{route('index')}}" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+                <a href="{{route('client.index')}}" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
                     <span class="fs-4">LOGO</span>
                 </a>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
@@ -44,7 +44,7 @@
         <nav class="py-2 mb-2">
             <div class="container d-flex flex-wrap">
                 <ul class="nav mx-auto">
-                    <li class="nav-item"><a href="{{route('index')}}" class="nav-link link-dark px-2">Start</a></li>
+                    <li class="nav-item"><a href="{{route('client.index')}}" class="nav-link link-dark px-2">Start</a></li>
                     @foreach($categories as $category)
                     <li class="nav-item"><a href="{{ url('category/'.$category->url)}}" class="nav-link link-dark px-2">{{$category->plural}}</a></li>
                     @endforeach
@@ -86,9 +86,8 @@
                     <div class="col">
                         <h5 class="fw-bold fs-4 text-uppercase text-custom">Zakupy</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="{{ url('busket')}}" class="nav-link p-0 text-custom-1">Koszyk</a></li>
-                            <li class="nav-item mb-2"><a href="{{ url('history')}}" class="nav-link p-0 text-custom-1">Twoje zamówienia</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-custom-1">Formy płatności</a>
+                            <li class="nav-item mb-2"><a href="{{ route('client.account.busket.index')}}" class="nav-link p-0 text-custom-1">Koszyk</a></li>
+                            <li class="nav-item mb-2"><a href="{{ route('client.account.order.index')}}" class="nav-link p-0 text-custom-1">Twoje zamówienia</a></li>
                             </li>
                         </ul>
                     </div>
@@ -96,11 +95,11 @@
                     <div class="col">
                         <h5 class="fw-bold fs-4 text-uppercase text-custom">Informacje</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="{{ url('about') }}" class="nav-link p-0 text-custom-1">O nas</a></li>
-                            <li class="nav-item mb-2"><a href="{{ url('return') }}" class="nav-link p-0 text-custom-1">Zwroty i reklamacje</a></li>
-                            <li class="nav-item mb-2"><a href="{{ url('rules') }}" class="nav-link p-0 text-custom-1">Regulamin</a></li>
-                            <li class="nav-item mb-2"><a href="{{ url('policy') }}" class="nav-link p-0 text-custom-1">Polityka prywatności</a></li>
-                            <li class="nav-item mb-2"><a href="{{ url('contact') }}" class="nav-link p-0 text-custom-1">Kontakt</a></li>
+                            <li class="nav-item mb-2"><a href="{{ route('client.about.index') }}" class="nav-link p-0 text-custom-1">O nas</a></li>
+                            <li class="nav-item mb-2"><a href="{{ route('client.return.index') }}" class="nav-link p-0 text-custom-1">Zwroty i reklamacje</a></li>
+                            <li class="nav-item mb-2"><a href="{{ route('client.rule.index') }}" class="nav-link p-0 text-custom-1">Regulamin</a></li>
+                            <li class="nav-item mb-2"><a href="{{ route('client.policy.index') }}" class="nav-link p-0 text-custom-1">Polityka prywatności</a></li>
+                            <li class="nav-item mb-2"><a href="{{ route('client.contact.index') }}" class="nav-link p-0 text-custom-1">Kontakt</a></li>
                         </ul>
                     </div>
                 </footer>

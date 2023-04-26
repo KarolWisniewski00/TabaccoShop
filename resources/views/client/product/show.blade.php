@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layout.client')
 @section('nav')
-@include('layouts.nav')
+@include('module.nav')
 @endsection
 @section('content')
 <!--PRODUCT-->
@@ -15,7 +15,7 @@
             <!--LINKS-->
             <div class="col-12 text-wrap">
                 <div class="d-flex flex-row justify-content-start align-items-center mb-4 flex-wrap">
-                    <a href="{{route('index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
+                    <a href="{{route('client.index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
                     <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
                     <div class="mx-1">Kategorie</div>
                     <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>

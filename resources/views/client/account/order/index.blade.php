@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layout.client')
 @section('nav')
-@include('layouts.nav')
+@include('module.nav')
 @endsection
 @section('content')
 <!--HISTORY-->
@@ -11,7 +11,7 @@
                 <div class="d-flex flex-column justify-content-center align-items-center text-center my-5">
                     <h1>Twoje zamówienia</h1>
                 </div>
-                @include('layouts.accnav')
+                @include('module.accnav')
                 <div class="col-12">
                     <div class="text-center fw-bold mt-4 pt-4" style="font-size: 1.4em;">Brak zamówień!</div>
                 </div>

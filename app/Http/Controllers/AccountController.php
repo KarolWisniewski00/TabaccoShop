@@ -9,31 +9,19 @@ use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
-    //INDEX ACCOUNT
-    public function account()
+    public function index()
     {
-        $user = User::where('id', '=', Session::get('login_id'))->get();
-        return view('account.account', [
-            'user' => $user[0],
-            'edit' => 0
+        return view('client.account.info.index', [
+            'user' => User::where('id', '=', Session::get('login_id'))->get()->first()
         ]);
     }
-    //INDEX HISTORY
-    public function history()
-    {
-        return view('account.history');
-    }
-    //INDEX EDIT
     public function edit()
     {
-        $user = User::where('id', '=', Session::get('login_id'))->get();
-        return view('account.account', [
-            'user' => $user[0],
-            'edit' => 1
+        return view('client.account.info.edit', [
+            'user' => User::where('id', '=', Session::get('login_id'))->get()->first()
         ]);
     }
-    //FORM EDIT
-    public function edit_form(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required',
