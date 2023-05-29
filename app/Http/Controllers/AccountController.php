@@ -23,14 +23,6 @@ class AccountController extends Controller
     }
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
-            'email' => 'required|email|unique:users,email,' . Session::get('login_id'),
-            'password' => 'nullable|min:8',
-            'password_confirm' => 'nullable|min:8|same:password'
-        ]);
-
         User::where('id', '=', Session::get('login_id'))->update([
             'name' => $request->name,
             'surname' => $request->surname,

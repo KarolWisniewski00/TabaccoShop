@@ -68,6 +68,15 @@
         @endif
     </div>
     <!--END ALERT-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex flex-column justify-content-center align-items-center text-center">
+                    @yield('title')
+                </div>
+            </div>
+        </div>
+    </div>
     @yield('content')
     <!--FOOTER-->
     <section class="text-white mt-5">

@@ -2,54 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use App\Http\Request\LoginRequest;
+use App\Http\Request\RegisterRequest;
+use Illuminate\Http\Request;
 
-class AuthController extends Controller
+class AuthController extends LoginController
 {
     public function login()
     {
         return view('client.auth.login');
     }
-    public function store(Request $request)
+    public function store(LoginRequest $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:8'
-        ]);
-
         $user = User::where('email', '=', $request->email)->first();
-
-        if ($user) {
-            if (Hash::check($request->password, $user->password)) {
-                $request->session()->put('login_id', $user->id);
-                if ($user->admin == true) {
-                    $request->session()->put('admin', $user->admin);
-                }
-                return redirect('/');
-            } else {
-                return redirect('/login')->with('fail', "Złe hasło!");
-            }
-        } else {
-            return redirect('/login')->with('fail', 'Nie ma takiego użytkownika!');
-        }
+        return $this->userCheck($request,$user);
     }
     public function register()
     {
         return view('client.auth.register');
     }
-    public function create(Request $request)
+    public function create(RegisterRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-            'password_confirm' => 'required|min:8|same:password'
-        ]);
-
         $user = new User();
         $user->name = $request->name;
         $user->surname = $request->surname;
