@@ -1,7 +1,7 @@
 @extends('layout.client')
 @section('nav')
 <ul class="nav">
-    <li><a href="{{ url('login')}}" class="mx-2 btn btn-custom rounded-0">Logowanie</a></li>
+    <li><a href="{{ route('login')}}" class="mx-2 btn btn-custom rounded-0">Logowanie</a></li>
 </ul>
 @endsection
 @section('content')
@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form class="form text-center my-5" action="{{route('client.create')}}" method="POST">
+                <form class="form text-center my-5" action="{{route('create')}}" method="POST">
                     <!--TOKEN-->
                     @csrf
                     <h1 class="h3 mb-3 fw-normal">Rejestracja</h1>
@@ -45,7 +45,7 @@
                         <span class="text-danger">@error('password_confirm') {{$message}} @enderror</span>
                     </div>
 
-                    <div><a href="{{ url('login')}}">Masz konto? Logowanie</a></div>
+                    <div><a href="{{ route('login')}}">Masz konto? Logowanie</a></div>
 
                     <button class="w-100 btn btn-lg btn-custom my-3 rounded-0" type="submit">Rejestracja</button>
                 </form>

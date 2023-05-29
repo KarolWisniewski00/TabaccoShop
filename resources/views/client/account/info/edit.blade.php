@@ -1,6 +1,6 @@
 @extends('layout.client')
 @section('nav')
-@include('module.nav')
+@include('module.nav.main')
 @endsection
 @section('title')
 <h1 class="my-5">Edycja konta</h1>
@@ -11,8 +11,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                @include('module.account')
-                <form class="form text-center my-5" action="{{route('client.account.info.store')}}" method="POST">
+                @include('module.nav.account')
+                <form class="form text-center my-5" action="{{route('account.info.store')}}" method="POST">
                     <p class="text-muted">Edytowanie hasła jest opcjonalne, jeśli chcesz zachować stare hasło pozostaw pola puste, w przeciwnym wypadku podaj nowe hasło.</p>
                     <!--TOKEN-->
                     @csrf
@@ -48,7 +48,7 @@
 
                     <div class="d-flex justify-content-start align-items-center mt-4">
                         <button class="btn btn-custom rounded-0 me-2" type="submit">Zapisz</button>
-                        <a href="{{route('client.account.info.index')}}" class="btn btn-danger rounded-0">Anuluj</a>
+                        <a href="{{route('account.info.index')}}" class="btn btn-danger rounded-0">Anuluj</a>
                     </div>
                 </form>
             </div>

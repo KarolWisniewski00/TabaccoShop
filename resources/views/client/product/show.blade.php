@@ -1,6 +1,6 @@
 @extends('layout.client')
 @section('nav')
-@include('module.nav')
+@include('module.nav.main')
 @endsection
 @section('title')
 <h1 class="my-5">{{$product->name}}</h1>
@@ -14,13 +14,13 @@
             <!--LINKS-->
             <div class="col-12 text-wrap">
                 <div class="d-flex flex-row justify-content-start align-items-center mb-4 flex-wrap">
-                    <a href="{{route('client.index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
+                    <a href="{{route('index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
                     <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
                     <div class="mx-1">Kategorie</div>
                     <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
                     @foreach($categories as $category)
                     @if ($category_id == $category->id)
-                    <a href="{{ url('category/'.$category->url)}}" class="text-custom-2 mx-1 text-decoration-none">{{$category->plural}}</a>
+                    <a href="{{ route('category.show',$category->url)}}" class="text-custom-2 mx-1 text-decoration-none">{{$category->plural}}</a>
                     @endif
                     @endforeach
                     <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>

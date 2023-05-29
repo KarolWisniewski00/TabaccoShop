@@ -1,6 +1,6 @@
 @extends('layout.client')
 @section('nav')
-@include('module.nav')
+@include('module.nav.main')
 @endsection
 @foreach($categories as $category)
 @if ($url == $category->url)
@@ -19,7 +19,7 @@
             <section>
                 <div class="col-12">
                     <div class="d-flex justify-content-start align-items-center mb-4">
-                        <a href="{{route('client.index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
+                        <a href="{{route('index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>
                         <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
                         <div class="mx-1">Kategorie</div>
                         <div class="mx-1"><i class="fa-solid fa-chevron-right" style="font-size: 0.75em;"></i></div>
@@ -72,7 +72,7 @@
                             <div class="accordion-body">
                                 @foreach($categories_count as $category)
                                 @if ($url != $category->url)
-                                <a href="{{ url('category/'.$category->url)}}" class="list-group-item d-flex justify-content-between align-items-start py-1">
+                                <a href="{{ route('category.show', $category->url)}}" class="list-group-item d-flex justify-content-between align-items-start py-1">
                                     <div class="ms-2 me-auto">
                                         <div class="fw-bold">{{$category->plural}}</div>
                                     </div>

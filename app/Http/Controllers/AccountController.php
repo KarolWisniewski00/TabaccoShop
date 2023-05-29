@@ -6,8 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
-
-class AccountController extends Controller
+use App\Http\Request\EditUserRequest;
+class AccountController extends UserController
 {
     public function index()
     {
@@ -21,20 +21,9 @@ class AccountController extends Controller
             'user' => User::where('id', '=', Session::get('login_id'))->get()->first()
         ]);
     }
-    public function store(Request $request)
+    public function update(EditUserRequest $request)
     {
-        User::where('id', '=', Session::get('login_id'))->update([
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'email' => $request->email,
-        ]);
-
-        if ($request->password != null) {
-            User::where('id', '=', Session::get('login_id'))->update([
-                'password' => Hash::make($request->password),
-            ]);
-        }
-
-        return redirect('account')->with('success', 'Edycja konta zakońcona powodzeniem!');
+        $this->updateUser($request);
+        return redirect('account')->with('success', 'Edycja konta zakońcona.');
     }
 }

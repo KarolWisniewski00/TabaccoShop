@@ -1,6 +1,6 @@
 @extends('layout.client')
 @section('nav')
-@include('module.nav')
+@include('module.nav.main')
 @endsection
 @section('title')
 <h1 class="my-5">Zwroty i reklamacje</h1>

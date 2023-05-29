@@ -12,7 +12,7 @@
     </div>
     <div class="d-flex flex-row justify-content-between align-items-center">
         <button class="btn btn-custom rounded-0 w-75 h-100 me-2">Dodaj do koszyka</button>
-        <a href="{{ url('product/'.$product->id)}}" class="btn btn-custom-1 rounded-0 w-25 h-100 text-black d-flex justify-content-center align-items-center"><i class="fa fa-search"></i></a>
+        <a href="{{ route('product.show',$product->id)}}" class="btn btn-custom-1 rounded-0 w-25 h-100 text-black d-flex justify-content-center align-items-center"><i class="fa fa-search"></i></a>
     </div>
     <div class="position-absolute top-0 start-100 p-2" style="transform:translateX(-100%)">
         @if ($product->new != 0)

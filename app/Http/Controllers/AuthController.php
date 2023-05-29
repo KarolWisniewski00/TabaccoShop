@@ -17,8 +17,7 @@ class AuthController extends LoginController
     }
     public function store(LoginRequest $request)
     {
-        $user = User::where('email', '=', $request->email)->first();
-        return $this->userCheck($request,$user);
+        return $this->userCheck($request, User::where('email', '=', $request->email)->first());
     }
     public function register()
     {
@@ -32,9 +31,9 @@ class AuthController extends LoginController
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->admin = false;
-        $res = $user->save();
+        $result = $user->save();
 
-        if ($res) {
+        if ($result) {
             return redirect('/login')->with('success', 'Rejestracja zakończona powodzeniem!');
         } else {
             return redirect('/')->with('fail', 'Error!');

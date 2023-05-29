@@ -1,6 +1,6 @@
 @extends('layout.client')
 @section('nav')
-@include('module.nav')
+@include('module.nav.main')
 @endsection
 @section('content')
 <!--HERO-->
@@ -51,7 +51,7 @@
         <div class="row g-4 justify-content-center">
             @foreach($categories as $category)
             <div class="col-12 col-md-4">
-                <a href="{{ url('category/'.$category->url)}}" class="position-relative cat-card">
+                <a href="{{ route('category.show', $category->url)}}" class="position-relative cat-card">
                     <div class="bg-img" style="background-image: url({{ asset('photos/'.$category->photo) }} );"></div>
                     <div class="position-absolute top-0 start-50 translate-middle-x text-center mt-3 p-2">
                         <p class="cat-cat">Kategoria</p>
