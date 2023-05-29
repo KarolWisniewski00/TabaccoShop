@@ -17,16 +17,16 @@ class LoginController extends Controller
     {
         if (Hash::check($request->password, $user->password)) {
             $this->sessionUserStart($request, $user);
-            return redirect('/');
+            return redirect()->route('index');
         } else {
-            return redirect('/login')->with('fail', "Złe hasło!");
+            return redirect()->route('login')->with('fail', "Złe hasło!");
         }
     }
     public function userCheck($request,$user){
         if ($user) {
             return $this->passwordUserCheck($request,$user);
         } else {
-            return redirect('/login')->with('fail', 'Nie ma takiego użytkownika!');
+            return redirect()->route('login')->with('fail', 'Nie ma takiego użytkownika!');
         }
     }
 }

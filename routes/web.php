@@ -71,8 +71,8 @@ Route::middleware(['isLoggedIn'])->group(function () {
     Route::prefix('account')->group(function () {
         Route::prefix('info')->group(function () {
             Route::get('/', [AccountController::class, 'index'])->name('account.info.index');
-            Route::get('/edit', [AccountController::class, 'edit'])->name('account.info.edit');
-            Route::put('/update', [AccountController::class, 'update'])->name('account.info.update');
+            Route::get('/edit/{slug}', [AccountController::class, 'edit'])->name('account.info.edit');
+            Route::put('/update/{slug}', [AccountController::class, 'update'])->name('account.info.update');
         });
 
         Route::prefix('busket')->group(function () {

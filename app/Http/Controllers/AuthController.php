@@ -34,9 +34,9 @@ class AuthController extends LoginController
         $result = $user->save();
 
         if ($result) {
-            return redirect('/login')->with('success', 'Rejestracja zakończona powodzeniem!');
+            return redirect()->route('login')->with('success', 'Rejestracja zakończona powodzeniem!');
         } else {
-            return redirect('/')->with('fail', 'Error!');
+            return redirect()->route('register')->with('fail', 'Error!');
         }
     }
     public function logout()

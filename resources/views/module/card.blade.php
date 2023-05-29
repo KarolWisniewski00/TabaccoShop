@@ -1,5 +1,5 @@
 <div class="border text-center p-4 shadow position-relative h-100 d-flex flex-column justify-content-between align-items-center">
-    <img alt="bong" src="{{ asset('photos/'.$product->photo)}}" class="img-fluid">
+    <a href="{{ route('product.show',$product->id)}}"><img alt="bong" src="{{ asset('photos/'.$product->photo)}}" onerror="replaceWithErrorSVG(this)" class="img-fluid"></a>
     <h3>{{$product->name}}</h3>
     <p class="text-muted">{{$product->short_description}}</p>
     <div class="d-flex flex-row justify-content-center align-items-center mb-4">
@@ -11,7 +11,7 @@
         @endif
     </div>
     <div class="d-flex flex-row justify-content-between align-items-center">
-        <button class="btn btn-custom rounded-0 w-75 h-100 me-2">Dodaj do koszyka</button>
+        <button class="btn btn-custom rounded-0 w-75 h-100 me-2"><i class="fa-solid fa-cart-shopping me-2"></i>Dodaj do koszyka</button>
         <a href="{{ route('product.show',$product->id)}}" class="btn btn-custom-1 rounded-0 w-25 h-100 text-black d-flex justify-content-center align-items-center"><i class="fa fa-search"></i></a>
     </div>
     <div class="position-absolute top-0 start-100 p-2" style="transform:translateX(-100%)">

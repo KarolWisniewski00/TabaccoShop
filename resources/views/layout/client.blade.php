@@ -13,8 +13,8 @@
 <body>
     <!--INFO +NAV + HEADER-->
     <section class="bg-light">
-        <div class="container-fluid bg-custom border-bot-custom mb-4 text-white">
-            <div class="d-flex flex-column flex-md-row justify-content-end py-2">
+        <div class="container-fluid bg-custom border-bot-custom text-white">
+            <div class="d-flex flex-row flex-wrap justify-content-center justify-content-md-end py-2">
                 <div class="me-3"><i class="fa-solid fa-joint"></i> Taco Tabacco</div>
                 <div class="me-3"><i class="fa-solid fa-phone"></i> +48 791 123 387</div>
                 <div class="me-3"><i class="fa-solid fa-envelope"></i> maciek.sacco@interia.pl</div>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <!---->
-        <header class="py-2 border-bottom">
+        <header class="py-4 border-bottom">
             <div class="container d-flex flex-wrap justify-content-center">
                 <a href="{{route('index')}}" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
                     <span class="fs-4">LOGO</span>
@@ -44,10 +44,12 @@
         <nav class="py-2 mb-2">
             <div class="container d-flex flex-wrap">
                 <ul class="nav mx-auto">
-                    <li class="nav-item"><a href="{{route('index')}}" class="nav-link link-dark px-2">Start</a></li>
-                    @foreach($categories as $category)
-                    <li class="nav-item"><a href="{{ route('category.show',$category->url)}}" class="nav-link link-dark px-2">{{$category->plural}}</a></li>
-                    @endforeach
+                    <div class="d-flex flex-row flex-wrap justify-content-center align-items-center text-center">
+                        <li class="nav-item"><a href="{{route('index')}}" class="nav-link link-dark px-2">Start</a></li>
+                        @foreach($categories as $category)
+                        <li class="nav-item"><a href="{{ route('category.show',$category->url)}}" class="nav-link link-dark px-2">{{$category->plural}}</a></li>
+                        @endforeach
+                    </div>
                 </ul>
             </div>
         </nav>
