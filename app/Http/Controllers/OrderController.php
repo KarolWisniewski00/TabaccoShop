@@ -10,4 +10,8 @@ class OrderController extends Controller
     {
         return view('client.account.order.index');
     }
+    public function show()
+    {
+        return view('client.account.order.show');
+    }
 }

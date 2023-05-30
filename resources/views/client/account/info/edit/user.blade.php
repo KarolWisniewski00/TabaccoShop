@@ -12,6 +12,7 @@
         <div class="row">
             <div class="col-12">
                 @include('module.nav.account')
+                <div class="mb-3"><a href="{{url()->previous()}}"><span class="badge rounded-pill bg-custom"><i class="fa-solid fa-chevron-left me-2"></i>Powrót</span></a></div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="d-flex flex-column justify-content-center align-items-center h-100">

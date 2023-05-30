@@ -81,6 +81,7 @@ Route::middleware(['isLoggedIn'])->group(function () {
 
         Route::prefix('order')->group(function () {
             Route::get('/', [OrderController::class, 'index'])->name('account.order.index');
+            Route::get('/show', [OrderController::class, 'show'])->name('account.order.show');
         });
     });
 });

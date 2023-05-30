@@ -12,6 +12,7 @@
     <div class="container">
         <div class="row">
             <!--LINKS-->
+            <div class="mb-3"><a href="{{url()->previous()}}"><span class="badge rounded-pill bg-custom"><i class="fa-solid fa-chevron-left me-2"></i>Powrót</span></a></div>
             <div class="col-12 text-wrap">
                 <div class="d-flex flex-row justify-content-start align-items-center mb-4 flex-wrap">
                     <a href="{{route('index')}}" class="text-custom-2 mx-1 text-decoration-none">Strona główna</a>

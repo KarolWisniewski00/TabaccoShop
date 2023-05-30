@@ -61,7 +61,31 @@
                 </div>
             </div>
             <div class="col-12">
-                <div class="text-center fw-bold mt-4 pt-4" style="font-size: 1.4em;">Brak zamówień!</div>
+                <div class="text-center fw-bold my-4 pt-4" style="font-size: 1.4em;">Brak zamówień!</div>
+            </div>
+            <div class="col-12">
+                <div class="overflow-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">Zamówienie</th>
+                                <th scope="col" class="text-center">Data</th>
+                                <th scope="col" class="text-center">Status</th>
+                                <th scope="col" class="text-center">Łącznie</th>
+                                <th scope="col" class="text-center">Działania</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-center" scope="row">#2115</th>
+                                <td class="text-center">29 maja 2023</td>
+                                <td class="text-center text-warning">Wstrzymane(Oczekujące na płatność)</td>
+                                <td class="text-center">123 PLN za 1 pozycję</td>
+                                <td class="text-center"><a href="{{route('account.order.show')}}" class="btn btn-custom"><i class="fa-solid fa-magnifying-glass"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
