@@ -6,7 +6,7 @@
                 <li class="nav-item"><a href="{{ route('account.order.index')}}" class="nav-link link-dark px-2"><i class="fa-solid fa-bag-shopping me-2"></i>Twoje zamówienia</a></li>
                 <li class="nav-item"><a href="{{ route('account.busket.index')}}" class="nav-link link-dark px-2"><i class="fa-solid fa-cart-shopping me-2"></i>Koszyk</a></li>
                 @if (session()->has('admin'))
-                <li class="nav-item"><a href="" class="nav-link link-dark px-2"><i class="fa-solid fa-screwdriver-wrench me-2"></i>Panel admina</a></li>
+                <li class="nav-item"><a href="{{route('admin')}}" class="nav-link link-dark px-2"><i class="fa-solid fa-screwdriver-wrench me-2"></i>Panel admina</a></li>
                 @endif
                 <li class="nav-item"><a href="{{ route('logout')}}" class="nav-link link-dark px-2"><i class="fa-solid fa-right-from-bracket me-2"></i>Wyloguj się</a></li>
             </div>

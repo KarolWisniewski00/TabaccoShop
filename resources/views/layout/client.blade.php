@@ -31,7 +31,7 @@
                     <div class="input-group px-2">
                         <input class="form-control rounded-0" type="search" placeholder="Szukaj" id="search-input">
                         <span class="input-group-append align-items-center d-flex">
-                            <button class="btn btn-outline-secondary bg-white border-0 ms-n5" type="button" style="--bs-btn-hover-color: #6c757d;">
+                            <button class="btn btn-outline-secondary bg-white border-0 ms-n5" type="button">
                                 <i class="fa fa-search"></i>
                             </button>
                         </span>

@@ -223,6 +223,6 @@
 }
 
 .form-check-input:focus {
-    border-color: #618E09!important;
-    box-shadow: 0 0 0 .25rem rgba(97, 142, 9, .25)!important
+    border-color: #618E09 !important;
+    box-shadow: 0 0 0 .25rem rgba(97, 142, 9, .25) !important
 }
